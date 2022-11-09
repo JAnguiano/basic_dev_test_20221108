@@ -16,7 +16,7 @@ class SaleSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         // Sales
-        for ($i = 1; $i < 6; $i++) {
+        for ($i = 1; $i < 8; $i++) {
             $product_test_id = $faker->numberBetween(1,5);
             $product = Product::where('id',$product_test_id)->first();
             $quantity_fake = $faker->numberBetween(0,$product->quantity);

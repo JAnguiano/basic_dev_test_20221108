@@ -15,7 +15,7 @@ class ProductSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         // Product 1
-        for ($i = 1; $i < 6; $i++) {
+        for ($i = 1; $i < 8; $i++) {
             $product = new Product();
             $product->name = "Product ".$i;
             $product->description = $faker->paragraph;
