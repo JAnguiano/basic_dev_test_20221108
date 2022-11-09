@@ -10,13 +10,20 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+     /**
+     * Relationship Has Many Users
+     */
+    public function sales()
+    {
+        return $this->hasMany('App\Sale');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
+    protected $guarded = [
     ];
 
     /**
@@ -25,7 +32,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
     ];
 
     /**
@@ -34,6 +40,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
     ];
+
 }
